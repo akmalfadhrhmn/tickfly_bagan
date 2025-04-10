@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TickCity - Flight Booking</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <h1>TickCity</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">MyTicket</a></li>
+          <li><a href="#">Cancel & Refund</a></li>
+          <li><a href="#">Help Center</a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <button class="btn btn-outline">Sign In</button>
+        <button class="btn btn-primary">Sign Up</button>
+      </div>
+    </header>
+    
+    <!-- Flight Info Bar -->
+    <div class="flight-info">
+      <div class="route">
+        <div class="city">
+          <span class="city-icon">✈</span>
+          <div>
+            <div>Jakarta (DKT)</div>
+            <div class="passenger-info">1 passengers | Economy</div>
+          </div>
+        </div>
+        <span class="separator">→</span>
+        <div class="city">
+          <span class="city-icon">✈</span>
+          <div>Lampung (LPG)</div>
+        </div>
+      </div>
+      <div class="date-picker">
+        <div class="date-label">Departure</div>
+        <div class="date-value">Mon, 14 Jun 2021</div>
+      </div>
+      <div class="search-button">
+        <button class="btn btn-primary">Search Another Tickets</button>
+      </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Filter Section -->
+      <div class="filter-section">
+        <div class="filter-header">
+          <div class="filter-title">Filter</div>
+          <button class="reset-btn">Reset</button>
+        </div>
+        
+        <!-- Price Filter -->
+        <div class="filter-group">
+          <div class="filter-group-title">Price</div>
+          <div class="price-slider">
+            <input type="range" min="0" max="100" value="50" id="priceRange" />
+          </div>
+          <div class="price-range">
+            <span>RP1.000.000</span>
+            <span>RP3.000.000</span>
+          </div>
+        </div>
+        
+        <!-- Departure Time Filter -->
+        <div class="filter-group">
+          <div class="filter-group-title">Departure Time</div>
+          <div>From Jakarta</div>
+          <div class="time-filters">
+            <div class="time-filter">
+              <div>Early Morning</div>
+              <div class="time-range">00:00 - 06:00</div>
+            </div>
+            <div class="time-filter active">
+              <div>Morning</div>
+              <div class="time-range">06:00 - 12:00</div>
+            </div>
+            <div class="time-filter">
+              <div>Afternoon</div>
+              <div class="time-range">12:00 - 18:00</div>
+            </div>
+            <div class="time-filter active">
+              <div>Evening</div>
+              <div class="time-range">18:00 - 24:00</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Transit Filter -->
+        <div class="filter-group">
+          <div class="filter-group-title">Transit</div>
+          <div class="radio-group">
+            <div class="radio-option">
+              <input type="radio" id="non-stop" name="transit" checked>
+              <label for="non-stop">Non Stop</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="one-stop" name="transit">
+              <label for="one-stop">1 Stop</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="two-stop" name="transit">
+              <label for="two-stop">2 Stop</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Results Section -->
+      <div class="results-section">
+        <div class="alert-box">Flight Found</div>
+        <div class="ticket-status">Your Ticket Ready</div>
+        
+        <div class="route-display">
+          <div class="origin">Jakarta (DKT)</div>
+          <div class="duration">2h 50m Direct</div>
+          <div class="destination">Lampung (LPG)</div>
+        </div>
+        
+        <div class="total-fare">
+          <div>Total Fare:</div>
+          <div>RP1.900.000</div>
+        </div>
+        
+        <button class="btn btn-primary book-btn">Book Flight</button>
+        
+        <!-- Flight Cards -->
+        <!-- Garuda Indonesia -->
+        <div class="flight-card">
+          <div class="flight-header">
+            <div class="airline-logo">G</div>
+            <div class="airline-name">Garuda Indonesia</div>
+            <div class="seats-left">3 seats left</div>
+          </div>
+          <div class="class-label">ClassCP</div>
+          <div class="flight-details">
+            <div class="time-info">
+              <div class="departure">
+                <div class="time">15:45</div>
+                <div class="airport">Jakarta</div>
+              </div>
+              <div class="route-line">
+                <div class="airplane-icon">✈</div>
+                <div class="duration-label">2 hours</div>
+              </div>
+              <div class="arrival">
+                <div class="time">20:05</div>
+                <div class="airport">Lampung</div>
+              </div>
+            </div>
+            <div class="price-info">
+              <div class="price">RP1.000.000</div>
+              <div class="refundable">REFUNDABLE</div>
+            </div>
+          </div>
+          <div class="flight-actions">
+            <button class="detail-btn">Flight Detail</button>
+            <button class="btn choose-btn selected">CHOSEN</button>
+          </div>
+        </div>
+        
+        <!-- Lion Air -->
+        <div class="flight-card">
+          <div class="flight-header">
+            <div class="airline-logo">L</div>
+            <div class="airline-name">Lion Air</div>
+            <div class="seats-left">2 seats left</div>
+          </div>
+          <div class="class-label">ClassH</div>
+          <div class="flight-details">
+            <div class="time-info">
+              <div class="departure">
+                <div class="time">20:05</div>
+                <div class="airport">Jakarta</div>
+              </div>
+              <div class="route-line">
+                <div class="airplane-icon">✈</div>
+                <div class="duration-label">2 hours</div>
+              </div>
+              <div class="arrival">
+                <div class="time">22:55</div>
+                <div class="airport">Lampung</div>
+              </div>
+            </div>
+            <div class="price-info">
+              <div class="price">RP1.400.000</div>
+              <div class="refundable">REFUNDABLE</div>
+            </div>
+          </div>
+          <div class="flight-actions">
+            <button class="detail-btn">Flight Detail</button>
+            <button class="btn choose-btn">CHOOSE</button>
+          </div>
+        </div>
+        
+        <!-- Sriwijaya Air 1 -->
+        <div class="flight-card">
+          <div class="flight-header">
+            <div class="airline-logo">S</div>
+            <div class="airline-name">Sriwijaya Air</div>
+            <div class="seats-left">3 seats left</div>
+          </div>
+          <div class="class-label">ClassC</div>
+          <div class="flight-details">
+            <div class="time-info">
+              <div class="departure">
+                <div class="time">15:45</div>
+                <div class="airport">Jakarta</div>
+              </div>
+              <div class="route-line">
+                <div class="airplane-icon">✈</div>
+                <div class="duration-label">2 hours</div>
+              </div>
+              <div class="arrival">
+                <div class="time">16:05</div>
+                <div class="airport">(LPG)</div>
+              </div>
+            </div>
+            <div class="price-info">
+              <div class="price">RP1.800.000</div>
+              <div class="refundable">REFUNDABLE</div>
+            </div>
+          </div>
+          <div class="flight-actions">
+            <button class="detail-btn">Flight Detail</button>
+            <button class="btn choose-btn">CHOOSE</button>
+          </div>
+        </div>
+        
+        <!-- Sriwijaya Air 2 -->
+        <div class="flight-card">
+          <div class="flight-header">
+            <div class="airline-logo">S</div>
+            <div class="airline-name">Sriwijaya Air</div>
+            <div class="seats-left">25 seats left</div>
+          </div>
+          <div class="class-label">ClassL</div>
+          <div class="flight-details">
+            <div class="time-info">
+              <div class="departure">
+                <div class="time">20:05</div>
+                <div class="airport">Jakarta</div>
+              </div>
+              <div class="route-line">
+                <div class="airplane-icon">✈</div>
+                <div class="duration-label">2 hours</div>
+              </div>
+              <div class="arrival">
+                <div class="time">22:55</div>
+                <div class="airport">Lampung</div>
+              </div>
+            </div>
+            <div class="price-info">
+              <div class="price">RP1.900.000</div>
+              <div class="refundable">REFUNDABLE</div>
+            </div>
+          </div>
+          <div class="flight-actions">
+            <button class="detail-btn">Flight Detail</button>
+            <button class="btn choose-btn selected">CHOSEN</button>
+          </div>
+        </div>
+        
+        <!-- Lion Air 2 -->
+        <div class="flight-card">
+          <div class="flight-header">
+            <div class="airline-logo">L</div>
+            <div class="airline-name">Lion Air</div>
+            <div class="seats-left">3 seats left</div>
+          </div>
+          <div class="class-label">ClassL</div>
+          <div class="flight-details">
+            <div class="time-info">
+              <div class="departure">
+                <div class="time">15:45</div>
+                <div class="airport">Jakarta</div>
+              </div>
+              <div class="route-line">
+                <div class="airplane-icon">✈</div>
+                <div class="duration-label">2 hours</div>
+              </div>
+              <div class="arrival">
+                <div class="time">20:05</div>
+                <div class="airport">Lampung</div>
+              </div>
+            </div>
+            <div class="price-info">
+              <div class="price">RP2.000.000</div>
+              <div class="refundable">REFUNDABLE</div>
+            </div>
+          </div>
+          <div class="flight-actions">
+            <button class="detail-btn">Flight Detail</button>
+            <button class="btn choose-btn">CHOOSE</button>
+          </div>
+        </div>
+        
+        <!-- Garuda Indonesia 2 -->
+        <div class="flight-card">
+          <div class="flight-header">
+            <div class="airline-logo">G</div>
+            <div class="airline-name">Garuda Indonesia</div>
+            <div class="seats-left">9 seats left</div>
+          </div>
+          <div class="class-label">ClassCP</div>
+          <div class="flight-details">
+            <div class="time-info">
+              <div class="departure">
+                <div class="time">20:05</div>
+                <div class="airport">Jakarta</div>
+              </div>
+              <div class="route-line">
+                <div class="airplane-icon">✈</div>
+                <div class="duration-label">2 hours</div>
+              </div>
+              <div class="arrival">
+                <div class="time">22:55</div>
+                <div class="airport">Lampung</div>
+              </div>
+            </div>
+            <div class="price-info">
+              <div class="price">RP2.000.000</div>
+              <div class="refundable">REFUNDABLE</div>
+            </div>
+          </div>
+          <div class="flight-actions">
+            <button class="detail-btn">Flight Detail</button>
+            <button class="btn choose-btn">CHOOSE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Sertakan file script.js di akhir body -->
+  <script src="script.js"></script>
+</body>
+</html>
